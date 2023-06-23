@@ -1,8 +1,18 @@
 import requests
 import pandas as pd
+import yaml
+
+def read_yaml(yaml_path):
+    with open(yaml_path, 'r',encoding='utf-8') as f:
+        yaml_content = yaml.safe_load(f)
+    return yaml_content
+
+config_path = "configs/config.yml"
+configs = read_yaml(config_path)
+
 
 #get data from API
-API_KEY = "35ea3d6a2e252ceb467477df19ce297c"
+API_KEY = configs["API_KEY"]
 LAT = 51.866402
 LONG = 4.661810
 
