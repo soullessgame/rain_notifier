@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import yaml
+import os
 
 def read_yaml(yaml_path):
     with open(yaml_path, 'r',encoding='utf-8') as f:
@@ -8,6 +9,7 @@ def read_yaml(yaml_path):
     return yaml_content
 
 config_path = "configs/config.yml"
+print(os.getcwd() + config_path)
 configs = read_yaml(config_path)
 
 
